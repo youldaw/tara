@@ -28,13 +28,19 @@ $(function () {
             prevEl: ".swiper-button-prev",
         },
         breakpoints: {
+            320: {
+                slidesPerView: 1,
+            },
             640: {
-                slidesPerView: 2,
+                slidesPerView: 1.6,
             },
             768: {
-                slidesPerView: 3,
+                slidesPerView: 2,
             },
             1024: {
+                slidesPerView: 3,
+            },
+            1200: {
                 slidesPerView: 4,
             },
         },
@@ -50,6 +56,8 @@ $(function () {
         breakpoints: {
             320: {
                 slidesPerView: 3,
+                direction: "horizontal",
+                spaceBetween: 10,
             },
             768: {
                 slidesPerView: 3,
