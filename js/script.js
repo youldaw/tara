@@ -1,8 +1,5 @@
 $(function () {
 
-    $('input[name=phone]').mask('+7 (999) 999-99-99');
-
-
     $('.catalog-btn a').on('click', function (e) {
         e.preventDefault();
         $(this).parent().toggleClass('active');
