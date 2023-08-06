@@ -1,4 +1,5 @@
 $(function () {
+    
 
     $('.catalog-btn a').on('click', function (e) {
         e.preventDefault();
@@ -92,3 +93,27 @@ $(function () {
 
 });
 
+$(document).ready(function(){
+    var cssAmimationSupport = false;
+    if(Modernizr.csstransforms && Modernizr.csstransitions)
+    {
+        cssAmimationSupport = true;
+        var mozCssFadeIn = {'-moz-animation-duration':'1s','-moz-animation-name':'fadeIn','-moz-opacity':'1'},
+            mozCssFadeOut = {'-moz-animation-duration':'1s','-moz-animation-name':'fadeOut','-moz-opacity':'0'},
+           webkitCssFadeIn = {'-webkit-animation-duration':'1s','-webkit-animation-name':'fadeIn','opacity':'1'},
+            webkitCssFadeOut = {'-webkit-animation-duration':'1s','-webkit-animation-name':'fadeOut','opacity':'0'},
+           cssFadeIn,
+           cssFadeOut;
+       if($.browser.mozilla)
+       {
+           cssFadeIn = mozCssFadeIn;
+           cssFadeOut = mozCssFadeOut;
+       }
+       else if($.browser.webkit)
+       {
+           cssFadeIn = webkitCssFadeIn;
+           cssFadeOut = webkitCssFadeOut;
+       }
+       else cssAmimationSupport = false;
+   }
+});
